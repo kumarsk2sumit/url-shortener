@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <main class="container">
+
+        <div class="header">
+            <div class="logo-mark">⚡</div>
+            <h1>URL Shortener</h1>
+            <p class="subtitle">Paste your long URL and get a short one instantly</p>
+        </div>
+
+        <div class="card">
+
+            <div class="input-group">
+                <input
+                    type="url"
+                    id="longURL"
+                    placeholder="https://your-very-long-url.com/goes/here"
+                    autocomplete="off"
+                    spellcheck="false"
+                />
+                <button id="shortenBtn" onclick="shortenURL()">
+                    <span id="btnText">Shorten</span>
+                    <span id="btnLoader" class="loader hidden"></span>
+                </button>
+            </div>
+
+            <div id="errorMsg" class="error-msg hidden"></div>
+
+            <div id="resultBox" class="result-box hidden">  
+                <p class="result-label">Your short URL</p>
+                <div class="result-row">
+                    <input type="text" id="shortURLDisplay" readonly />
+                    <button class="copy-btn" onclick="copyURL()">
+                        <span id="copyText">Copy</span>
+                    </button>
+                </div>
+                <p id="copyConfirm" class="copy-confirm hidden">✓ Copied to clipboard</p>
+            </div>
+
+        </div>
+
+        <p class="footer-note">Powered by AWS Lambda · DynamoDB · API Gateway</p>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
