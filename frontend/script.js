@@ -1,4 +1,4 @@
-const API_URL = 'https://t3kpvfmsa4.execute-api.ap-southeast-1.amazonaws.com/prod';
+const API_URL = 'https://YOUR_API_GATEWAY_URL/prod';
 
 async function shortenURL() {
     const longURL = document.getElementById('longURL').value.trim();
